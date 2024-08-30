@@ -8,27 +8,51 @@
 
 <body>
     <style>
+        body{
+            font-family: Verdana;
+            text-align: center;
+        }
+        legend{
+            font-size: 50px;
+            text-align: center;
+        }
+        fieldset{
+            display: inline-block;
+            margin: 0 auto;
+            
+        }
         table,
         th,
         td,
         thead {
             border: 1px solid black;
             border-collapse: collapse;
+            padding: 5px;
+            margin: 0 auto;
+        }
+        thead{
+            background-color: lightgray;
+        }
+        td{
+            text-align: center;
+        }
+        button{
+            padding-left: 10px;
         }
     </style>
     <form method="post" action="./php/GenerarArchivo.php">
         <fieldset>
             <legend>Sistema de Asistencia</legend><br>
-            <label>Fecha</label>
-            <input type="date" name="fecha" required><br>
             <h2>Listado de Alumnos</h2>
+            <label>Fecha</label>
+            <input type="date" name="fecha" required><br><br>
             <table>
                 <thead>
                     <tr>
-                        <th>Numero de Legajo</th>
+                        <th>Número de Legajo</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>Asistenica</th>
+                        <th>Asistencia</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,9 +83,9 @@
                     fclose($pf)
                     ?>
                 </tbody>
-            </table>
-            <input type="submit" value="Enviar">
-            <input type="reset" value="Cancelar">
+            </table><br>
+            <input type="submit" class="button" value="Enviar">
+            <input type="reset" class="button" value="Cancelar">
         </fieldset>
     </form>
 </body>
